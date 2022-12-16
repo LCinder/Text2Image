@@ -1,0 +1,80 @@
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #2d2d2d;
+}
+
+img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    width: 100%;
+}
+
+input {
+    width: 75%;
+}
+
+.card {
+    border: #fff solid 2px;
+    margin: 5% 20% 10% 10%;
+    position: relative;
+    background-color: lightcyan;
+    display: grid;
+}
+
+.container {
+    display: grid;
+}
+
+h1 {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 3vw;
+    padding: 3% 0%;
+}
+
+button {
+    padding: 1% 2%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 2% 1%;
+    transition-duration: .5s;
+    background-color: white;
+    border: 2px solid dodgerblue;
+}
+
+input {
+    padding: 1% 2%;
+    display: inline-block;
+    margin: 2% 1%;
+    border: 2px solid dodgerblue;
+}
+
+button:hover {
+    background-color: dodgerblue;
+    color: white;
+}
+
+button:hover .icon {
+    color: white;
+}
+
+.container-2 {
+    background-color: #2d2d2d;
+    display: inline-flex;
+}
+
+.icon {
+    color: dodgerblue;
+}
+
