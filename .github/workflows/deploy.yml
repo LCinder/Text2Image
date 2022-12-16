@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+	with:
+	  repository: LCinder/Text2Image
 
       - name: Install dependencies
         run: |
