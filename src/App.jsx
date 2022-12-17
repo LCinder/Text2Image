@@ -15,38 +15,34 @@ const App = () => {
     const [images, setImages] = useState([]);
     const [isImage, setIsImage] = useState(false);
     const [hide, setHide] = useState(true);
-    const env = dotenv.config();
 
     const random = Math.floor(Math.random() * 100);
-    const url = `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CLIENT_ID}&search_type=image&rights=cc_publicdomain&start=${random}&q=${query}`
+    const url = `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CLIENT_ID}&search_type=image&imgSize=LARGE&rights=cc_publicdomain&start=${random}&q=${query}`
 
     useEffect(() => {
         fetch(url)
             .then((res) => res.json())
             .then((data) => {
                 let allImages = [];
-                console.log(url)
-                console.log(data)
-
                 data.items.forEach((item) => {
                     allImages.push(item.link)
                 })
 
                 const imageRandom = Math.floor(Math.random() * allImages.length);
                 setImages(allImages);
-                setImageURL(images[imageRandom]);
-                setIsImage(true)
+                setImageURL(allImages[imageRandom]);
+                setIsImage(true);
             })
             .catch(e => {
-                console.log(e)
+                console.log(e);
                 setImages([]);
                 setImageURL("");
-                setIsImage(true)
+                setIsImage(true);
             })
     }, [query])
 
     const download = () => {
-        html2canvas(document.getElementById("container"), {useCORS: true, scale: 10})
+        html2canvas(document.getElementById("container"), {useCORS: true, scale: 4})
         .then((element) => {
             const image = element.toDataURL("image/jpg", 1.0);
             downloadjs(image);
