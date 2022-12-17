@@ -5,6 +5,7 @@ import downloadjs from "downloadjs";
 import {useState, useEffect} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRotate, faArrowDown, faEyeSlash } from "@fortawesome/free-solid-svg-icons"
+import * as dotenv from 'dotenv';
 
 const App = () => {
 
@@ -14,6 +15,7 @@ const App = () => {
     const [images, setImages] = useState([]);
     const [isImage, setIsImage] = useState(false);
     const [hide, setHide] = useState(true);
+    const env = dotenv.config();
 
     const random = Math.floor(Math.random() * 100);
     const url = `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CLIENT_ID}&search_type=image&rights=cc_publicdomain&start=${random}&q=${query}`
